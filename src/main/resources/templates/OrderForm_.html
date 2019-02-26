@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<header id="header-area" class="fixed-top">
+    <!--== Header Top Start ==-->
+    <div id="header-top" class="d-none d-xl-block">
+        <div class="container">
+            <div class="row">
+                <!--== Single HeaderTop Start ==-->
+                <!--== Single HeaderTop End ==-->
+                <!--== Single HeaderTop Start ==-->
+                <!--== Single HeaderTop End ==-->
+                <!--== Single HeaderTop Start ==-->
+                <!--== Single HeaderTop End ==-->
+                <!--== Social Icons Start ==-->
+                <!--== Social Icons End ==-->
+            </div>
+        </div>
+    </div>
+    <!--== Header Top End ==-->
+
+    <!--== Header Bottom Start ==-->
+    <div id="header-bottom">
+        <div class="container">
+            <div class="row">
+                <!--== Logo Start ==-->
+                <div class="col-lg-4">
+                    <a href="index.html" class="logo">
+
+                    </a>
+                </div>
+                <!--== Logo End ==-->
+
+                <!--== Main Menu Start ==-->
+                <div class="col-lg-8 d-none d-xl-block">
+                    <nav class="mainmenu alignright">
+                        <ul>
+                            <li class="active"><a href="#">Home</a>
+                                <ul>
+                                    <li><a href="home.html"></a></li>
+
+                                </ul>
+                            </li>
+                            <a href="home2.html">Home2</a>
+                            <li><a href="OrderForm.html">Order</a></li>
+                            <li><a href="home2.html">services</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--== Main Menu End ==-->
+            </div>
+        </div>
+    </div>
+    <!--== Header Bottom End ==-->
+</header>
+<head>
+    <title>Your Order</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!--=== Bootstrap CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!--=== Slicknav CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/plugins/slicknav.min.css" rel="stylesheet">
+    <!--=== Magnific Popup CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <!--=== Owl Carousel CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/plugins/owl.carousel.min.css" rel="stylesheet">
+    <!--=== Gijgo CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/plugins/gijgo.css" rel="stylesheet">
+    <!--=== FontAwesome CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/font-awesome.css" rel="stylesheet">
+    <!--=== Theme Reset CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/reset.css" rel="stylesheet">
+    <!--=== Main Style CSS ===-->
+    <link href="style.css" rel="stylesheet">
+    <!--=== Responsive CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-spinner">
+        <div class="loader-content">
+            <img src="../../../../../Car2/target/classes/templates/assets/img/preloader.gif" alt="JSOFT">
+        </div>
+    </div>
+</div>
+<a th:href="@{/home}" id="aer">Go Home</a><br/>
+<form method="POST" th:action="@{/orders}" th:object="${order}">
+    <h1>RENT A CAR!</h1>
+
+    <a th:href="@{/home}" id="another">Personal Info</a><br/>
+    <br/>
+    <div th:if="${#fields.hasErrors()}">
+<span class="validationError">
+Please correct the problems below and resubmit.
+</span>
+    </div>
+    <label for="name">Name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <span class="validationError"
+          th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}">Name Error</span>
+    <br/>
+    <label for="city">City: </label>
+    <input type="text" th:field="*{city}" id="city"/>
+    <span class="validationError"
+          th:if="${#fields.hasErrors('city')}"
+          th:errors="*{city}">City Error</span>
+    <br/>
+    <h3>Here's how I'll pay...</h3>
+    <label for="ccNumber">Credit Card #: </label>
+    <input type="text" th:field="*{ccNumber}" id ="ccNumber"/>
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ccNumber')}"
+          th:errors="*{ccNumber}">CC Num Error</span>
+    <br/>
+    <label for="ccExpiration">Expiration: </label>
+    <input type="text" th:field="*{ccExpiration}"/>
+    <br/>
+    <label for="ccCVV">CVV: </label>
+
+    <input type="text" th:field="*{ccCVV}"/>
+    <br/>
+    <input type="submit" value="Submit order"/>
+</form>
+</body>
+</html>

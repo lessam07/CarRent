@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:border-width="http://www.w3.org/1999/xhtml"
+      xmlns:margin-left="http://www.w3.org/1999/xhtml" xmlns:border-color="http://www.w3.org/1999/xhtml">
+<img rel="shortcut icon" th:href="@{/img/logo.png}">
+<!-- Author Meta -->
+<meta name="author" content="codepixer"/>
+<!-- Meta Description -->
+<meta name="description" content=""/>
+<!-- Meta Keyword -->
+<meta name="keywords" content=""/>
+<!-- meta character set -->
+<meta charset="UTF-8"/>
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+
+<link rel="stylesheet" th:href="@{/css/nice-select.css}">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<head>
+    <title>Taco Cloud</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<div class="col-lg-8 d-none d-xl-block">
+    <nav class="mainmenu alignright">
+        <ul>
+            <li class="active"><a href="">Home</a></li>
+            <li><a th:href="@{index}">Home2</a></li>
+            <li><a th:href="@{orderForm}">Order</a></li>
+            <li><a th:href="@{design}">Services</a></li>
+        </ul>
+    </nav>
+</div>
+<body>
+<h1 style="margin-left: 350px">Welcome to CAR RENT BOOKING!</h1>
+
+   <form method="POST" th:action="@{/}" th:object="${Information}">
+       <label for="location">Pick the location:</label>
+<input type="text" th:field="*{location}"/>
+       <span style="color:red;" class="validationError"
+             th:if="${#fields.hasErrors('location')}"
+             th:errors="*{location}">Location Error></span>
+       <label for="pickupDate">Pick Up Date:</label>
+<input type="text" th:field="*{pickupDate}"/>
+       <span style="color:red;" class="validationError"
+             th:if="${#fields.hasErrors('pickupDate')}"
+             th:errors="*{pickupDate}">Pick Up Date Error></span>
+<label for="returnDate">Return date:</label>
+<input type="text" th:field="*{returnDate}"/>
+       <span style="color:red;" class="validationError"
+             th:if="${#fields.hasErrors('returnDate')}"
+             th:errors="*{returnDate}">Return Date Error></span>
+       <label for="carType">Choose the Car type:</label>
+       <input type="text" th:field="*{carType}"/>
+       <span style="color:red;" class="validationError"
+             th:if="${#fields.hasErrors('carType')}"
+             th:errors="*{carType}">Car Type Error></span>
+       <input type="submit" name="submit" id="submit" value="home" class="btn btn-primary btn-block"/>
+</form>
+</body>
+</html>
+

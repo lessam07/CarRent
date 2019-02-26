@@ -1,0 +1,152 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!--=== Bootstrap CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!--=== Slicknav CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/plugins/slicknav.min.css" rel="stylesheet">
+    <!--=== Magnific Popup CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <!--=== Owl Carousel CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/plugins/owl.carousel.min.css" rel="stylesheet">
+    <!--=== Gijgo CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/plugins/gijgo.css" rel="stylesheet">
+    <!--=== FontAwesome CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/font-awesome.css" rel="stylesheet">
+    <!--=== Theme Reset CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/reset.css" rel="stylesheet">
+    <!--=== Main Style CSS ===-->
+    <link href="style.css" rel="stylesheet">
+    <!--=== Responsive CSS ===-->
+    <link href="../../../../../Car2/target/classes/templates/assets/css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="loader-active">
+
+<!--== Preloader Area Start ==-->
+<div class="preloader">
+    <div class="preloader-spinner">
+        <div class="loader-content">
+            <img src="../../../../../Car2/target/classes/templates/assets/img/preloader.gif" alt="JSOFT">
+        </div>
+    </div>
+</div>
+<!--== Preloader Area End ==-->
+
+<!--== Header Area Start ==-->
+<header id="header-area" class="fixed-top">
+    <!--== Header Top Start ==-->
+    <div id="header-top" class="d-none d-xl-block">
+        <div class="container">
+            <div class="row">
+                <!--== Single HeaderTop Start ==-->
+                <!--== Single HeaderTop End ==-->
+                <!--== Single HeaderTop Start ==-->
+                <!--== Single HeaderTop End ==-->
+                <!--== Single HeaderTop Start ==-->
+                <!--== Single HeaderTop End ==-->
+                <!--== Social Icons Start ==-->
+                <!--== Social Icons End ==-->
+            </div>
+        </div>
+    </div>
+    <!--== Header Top End ==-->
+
+    <!--== Header Bottom Start ==-->
+    <div id="header-bottom">
+        <div class="container">
+            <div class="row">
+                <!--== Logo Start ==-->
+                <div class="col-lg-4">
+                    <a href="index.html" class="logo">
+
+                    </a>
+                </div>
+                <!--== Logo End ==-->
+
+                <!--== Main Menu Start ==-->
+                <div class="col-lg-8 d-none d-xl-block">
+                    <nav class="mainmenu alignright">
+                        <ul>
+                            <li class="active"><a href="../../../../../Car2/target/classes/templates/home.html">Home</a>
+                                <ul>
+                                    <li><a href="../../../../../Car2/target/classes/templates/home.html"></a></li>
+
+                                </ul>
+                            </li>
+                           <li><a href="home2.html">Home2</a></li>
+                            <li><a th:href="@{/OrderForm}" id="design">Order</a></li>
+
+                            <li><a href="home2.html">services</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--== Main Menu End ==-->
+            </div>
+        </div>
+    </div>
+    <!--== Header Bottom End ==-->
+</header>
+<!--== Header Area End ==-->
+
+
+<head>
+    <title>Car Rent Booking</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <h1>BOOK A CAR TODAY!</h1>
+</head>
+<form method="POST" th:object="${home}">
+<div>
+    <div>
+        <h3>Pick up the location:</h3>
+        <input type="text" th:field="*{location}"/>
+        <br/>
+    </div>
+    <div>
+        <h3>Pick-up date:</h3>
+        <input type="text" th:field="*{pickupDate}"/>
+        <br/>
+    </div>
+
+    <div>
+        <h3>Return date:</h3>
+        <input type="text" th:field="*{returnDate}"/>
+        <br/>
+    </div>
+
+    <h3>Choose the car type:</h3>
+    <div>
+    <div>
+        <input name="models" type="checkbox" value="AUDI"/>AUDI<br/>
+        <input name="models" type="checkbox" value="AUDI"/>LEXUS<br/>
+        <input name="models" type="checkbox" value="AUDI"/>BMW<br/>
+        <input name="models" type="checkbox" value="AUDI"/>FORD<br/>
+        <input name="models" type="checkbox" value="AUDI"/>TOYOTA<br/>
+        <span></span><br/>
+
+    <button th:action="/OrderForm" >Submit</button></div>
+
+</div>
+</div>
+</form>
+</body>
+</html>
+
+
+
+
