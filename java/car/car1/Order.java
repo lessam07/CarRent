@@ -1,11 +1,9 @@
 package car.car1;
-
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
 import lombok.Data;
-
 import java.util.Date;
 
 @Data

@@ -1,7 +1,6 @@
 package car.car1;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
@@ -38,6 +37,14 @@ public class Information {
     @PrePersist
     void createdAt() {
         this.created_at = new Date();
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 }
 
